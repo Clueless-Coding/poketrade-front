@@ -5,8 +5,19 @@ import Nav from "./Navbar";
 import Profile from "./pages/profile";
 import Login from "./pages/loginpage";
 import Footer from "./footer";
+import Packs from "./pages/packs";
 import FooterExp from "./footer_expansion";
 const Page = () => {
+    const holder = [{
+        name: "holder",
+        price:  0,
+        items: {
+            id: 1,
+            name: "bulbasaur"
+        }
+    }]
+    //there are no packs yet
+
     const [token, setToken] = useState()
     const [pokemon, setPokemon] = useState()
     const [userAuth, setUserAuth] = useState({})
@@ -42,7 +53,7 @@ const Page = () => {
         }
     }
     //Register API call
-    //THAT SHIT NOW WORK (upd)
+    //need rework
     const register = async (event) => {
         event.preventDefault()
         const response = await fetch(`https://poketrade-production.up.railway.app/auth/register`, {
@@ -62,7 +73,6 @@ const Page = () => {
         window.location.reload();
     }
     //Checking if user logged in on page rendering
-    //Also need some changes
     const savedToken = localStorage.getItem("token")
     useEffect(() => {
         savedToken && getUser(savedToken)
@@ -90,6 +100,10 @@ const Page = () => {
                         <Route 
                             path="/"
                             element={<Homepage pokemon={pokemon}/>}
+                        />
+                        <Route
+                            path="/packs"
+                            element={<Packs props={holder}/>}
                         />
                         <Route
                             path="/Profile"

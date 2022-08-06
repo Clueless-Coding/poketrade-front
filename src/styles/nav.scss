@@ -76,19 +76,27 @@
 }
 
 #nav-home {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #e3350d;
     transition: all 0.4s ease;
     &:hover {
-        background-color: red;
+        background-color: #e3350d;
         font-size: large;
     }
 }
 
 #nav-profile {
-    border-bottom: 2px solid orange;
+    border-bottom: 2px solid #e6bc2f;
     transition: all 0.4s ease;
     &:hover {
-        background-color: orange;
+        background-color: #e6bc2f;
+        font-size: large;
+    }
+}
+#nav-packs {
+    border-bottom: 2px solid #ee6b2f;
+    transition: all 0.4s ease;
+    &:hover {
+        background-color: #ee6b2f;
         font-size: large;
     }
 }
