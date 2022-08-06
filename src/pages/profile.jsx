@@ -1,0 +1,29 @@
+import React from "react";
+import Pokemon from "../elements/pokemonicon";
+import holder from "./ANOTHERONE.png"
+const Profile = ({user}) => {
+    const logOut = () => {
+        localStorage.clear("token")
+        window.location.reload()
+        
+    }
+    const Inventory = () => (user.pokemons && user.pokemons.map((item, itemid) => <Pokemon key={itemid} pokemon={item}/>))
+    return (
+    <>
+        <div className="profile">
+            <div className="profile-user">
+                <img alt="" src={holder}/>
+                <h2>Name: {user.name}</h2>
+                <h2>Balance: {user.balance}</h2>
+                <h3>Amount: {user.pokemons && user.pokemons.length}</h3>
+            </div>
+            <button className="submit" onClick={logOut}>Log out</button>
+            <div className="inventory">
+                <h1>{user.pokemons ? "Your collection" : "You dont have yet any pokemons"}</h1>
+                <Inventory/>
+            </div>
+        </div>
+    </>
+    )
+}
+export default Profile

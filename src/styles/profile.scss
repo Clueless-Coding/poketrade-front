@@ -1,0 +1,19 @@
+.profile-user {
+    margin: 10px;
+    border: solid 1px white;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 5px;
+    border: 2px soild;
+    background-color: $mainbackGround;
+    img {
+        height: 200px;
+        border-radius: 5px;
+        width: 200px;
+    }
+}
+.inventory {
+    display: flex;
+    margin: 10px;
+}

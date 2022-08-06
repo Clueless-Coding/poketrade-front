@@ -1,0 +1,76 @@
+.home-show{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+.card{
+    max-height: 100%;
+    max-width: 400px;
+    min-height: 300px;
+    min-width: 200px;
+    display: flex;
+    margin: 10px;
+    transition: all 0.5s ease,;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 2px 5px 5px #303030; 
+    &:hover {
+        transform: scale(1.1);
+        .card-text {
+            height: 100%;
+        }
+        div{
+            opacity: 1;
+        }
+    }
+    cursor: pointer;
+}
+.card-text{
+    text-align: center;
+    height: 75px;
+    line-height: 75px;
+    transition: 0.5s ease;
+    //backdrop-filter: blur(1rem);
+    h1{
+        margin:  0;
+    }
+    div{
+        padding: 0;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+    p{
+        margin: 30px 0 0 0;
+        padding: 0;
+        line-height: 25px;
+    }
+}
+.card-packs{
+    background-image: url('https://tcg.pokemon.com/assets/img/home/wallpapers/wallpaper-54.jpg');
+    div{
+    background-color: #e3350d;
+    }
+}
+.card-sell {
+    background-image: url('https://tcg.pokemon.com/assets/img/home/wallpapers/wallpaper-42.jpg');
+    div {
+        background-color: #ee6b2f;
+    }
+}
+.card-trade {
+    background-image: url('https://tcg.pokemon.com/assets/img/home/wallpapers/wallpaper-59.jpg');
+    div {
+        background-color: #e6bc2f;
+    }
+}
+@keyframes test {
+    0%{width: 20px}
+    100%{width: 100%}
+}
+.test-div{
+    background-color: black;
+    color: white;
+    animation: test 1s;
+    width: 100%;
+}
+

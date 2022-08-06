@@ -1,0 +1,53 @@
+@keyframes rgb {
+    0% {
+        border-color: red;
+    }
+    10% {
+        border-color: #FF5900;
+    }
+    20% {
+        border-color: #F5A608
+    }
+    30% {
+        border-color: yellow
+    }
+    40% {
+        border-color: #92E621
+    }
+    50% {
+        border-color: green;
+    }
+    60% {
+        border-color: cyan;
+    }
+    70% {
+        border-color: blue;
+    }
+    80% {
+        border-color: #6A14F5
+    }
+    90% {
+        border-color: purple;
+    }
+    100% {
+        border-color: red;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        border-image: $gradient1 1;
+    }
+    25% {
+        border-image: $gradient2 1;
+    }
+    50% {
+        border-image: $gradient3 1;
+    }
+    75% {
+        border-image: $gradient4 1
+    }
+    100% {
+        border-image: $gradient1 1;
+    }
+}
