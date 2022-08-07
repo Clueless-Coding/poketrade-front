@@ -102,7 +102,7 @@ const Page = () => {
                             element={<Homepage pokemon={pokemon}/>}
                         />
                         <Route
-                            path="/packs"
+                            path="/packs/*"
                             element={<Packs props={holder}/>}
                         />
                         <Route
