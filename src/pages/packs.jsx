@@ -1,10 +1,16 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Pack from "../elements/packicon";
+import Packpage from "./packopen";
 const Packs = ({props}) => {
-    const Packlayout = () => (props.map((item, i) => <Pack props={item} key={i}/>))
+    const packPages = props.map((item, i) => <Route key={i} path={`/${item.name}`} element={<Packpage props={item}/>}/>)
+    const Packcollection = () => (props.map((item, i) => <Pack props={item} key={i}/>))
     return(
         <>
-            <Packlayout/>
+            <Routes>
+                {packPages}
+            </Routes>
+            <Packcollection/>
         </>
     )
 }
