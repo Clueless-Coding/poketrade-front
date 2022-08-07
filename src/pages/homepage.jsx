@@ -1,12 +1,6 @@
 import React, {useState} from "react";
 import Pokemon from "../elements/pokemonicon";
 const Homepage = ({pokemon}) => {
-    const [test, setTest] = useState(false)
-    const Test2 = () => (
-        <div className="test-div">
-            Hello
-        </div>
-    )
     return (
         <>
             <div className="home-show">
@@ -29,8 +23,6 @@ const Homepage = ({pokemon}) => {
                     </div>
                 </div>
             </div>
-            <button className="submit" onClick={() => setTest(prevState => !prevState)}>See animation</button>
-            {test && <Test2/>}
         </>
     )
 }

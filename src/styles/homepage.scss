@@ -63,14 +63,3 @@
         background-color: #e6bc2f;
     }
 }
-@keyframes test {
-    0%{width: 20px}
-    100%{width: 100%}
-}
-.test-div{
-    background-color: black;
-    color: white;
-    animation: test 1s;
-    width: 100%;
-}
-

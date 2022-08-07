@@ -9,7 +9,7 @@ import Packs from "./pages/packs";
 import FooterExp from "./footer_expansion";
 const Page = () => {
     const holder = [{
-        name: "holder",
+        name: "Default Pack",
         price:  0,
         items: {
             id: 1,
