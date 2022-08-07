@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import Pokemon from "../elements/pokemonicon";
+import Pokemon from "./elements/pokemonicon";
 const Homepage = ({pokemon}) => {
     return (
         <>

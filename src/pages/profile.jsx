@@ -1,11 +1,10 @@
 import React from "react";
-import Pokemon from "../elements/pokemonicon";
+import Pokemon from "./elements/pokemonicon";
 import holder from "./ANOTHERONE.png"
 const Profile = ({user}) => {
     const logOut = () => {
         localStorage.clear("token")
         window.location.reload()
-        
     }
     const Inventory = () => (user.pokemons && user.pokemons.map((item, itemid) => <Pokemon key={itemid} pokemon={item}/>))
     return (

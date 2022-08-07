@@ -29,7 +29,7 @@ body{
         left: 0;
         z-index: -1;
         background-image: url("./wallpaper-56.jpg");
-        filter: blur(1rem);
+        filter: blur(5px);
         height: 100vh;
         width: 100vw;
         background-repeat: no-repeat;
@@ -52,6 +52,7 @@ body{
     top: 70px;
     align-items: center;
     background-color: $thirdbackGround;
+    //backdrop-filter: blur(5px);
     width: 80vw;
     opacity: 1;
 }

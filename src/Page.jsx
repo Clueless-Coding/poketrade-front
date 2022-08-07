@@ -6,17 +6,48 @@ import Profile from "./pages/profile";
 import Login from "./pages/loginpage";
 import Footer from "./footer";
 import Packs from "./pages/packs";
+import Packpage from "./pages/packopen";
 import FooterExp from "./footer_expansion";
 const Page = () => {
     const holder = [{
-        name: "Default Pack",
+        name: "Default",
         price:  0,
-        items: {
-            id: 1,
-            name: "bulbasaur"
-        }
+        items: [
+            {
+                id: 1,
+                name: "bulbasaur",
+                image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+            },
+            {
+                id: 1,
+                name: "bulbasaur",
+                image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+            }
+        ]
+    },
+    {       
+        name: "Default",
+        price:  0,
+        items: [
+            {
+                id: 1,
+                name: "bulbasaur",
+                image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+            },
+            {
+                id: 1,
+                name: "bulbasaur",
+                image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+            }
+        ]
     }]
     //there are no packs yet
+    const packPages = holder.map((item, i) => 
+        <Route key={i}
+            path={`/${item.name}`}
+            element={<Packpage props={item}/>
+        }/>
+    )
 
     const [token, setToken] = useState()
     const [pokemon, setPokemon] = useState()
@@ -103,7 +134,9 @@ const Page = () => {
                         />
                         <Route
                             path="/packs/*"
-                            element={<Packs props={holder}/>}
+                            element={<Packs 
+                                packs={holder}
+                            />}
                         />
                         <Route
                             path="/Profile"
@@ -118,6 +151,7 @@ const Page = () => {
                                 />
                             }
                         />
+                        {packPages}
                     </Routes>
                 </div>
             </Router>
