@@ -51,3 +51,7 @@
         border-image: $gradient1 1;
     }
 }
+@keyframes openingAnimation{
+    0%{right: 30vw}
+    100%{right: 0}
+}

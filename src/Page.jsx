@@ -46,11 +46,12 @@ const Page = () => {
         <Route key={i}
             path={`/${item.name}`}
             element={<Packpage props={item}/>
-        }/>
+            }
+        />
     )
 
     const [token, setToken] = useState()
-    const [pokemon, setPokemon] = useState()
+    //const [pokemon, setPokemon] = useState()
     const [userAuth, setUserAuth] = useState({})
     const [user, setUser] = useState({})
     //Would be better if I could get rid of it
@@ -130,7 +131,7 @@ const Page = () => {
                     <Routes >
                         <Route 
                             path="/"
-                            element={<Homepage pokemon={pokemon}/>}
+                            element={<Homepage/>}
                         />
                         <Route
                             path="/packs/*"

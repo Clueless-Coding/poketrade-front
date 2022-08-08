@@ -4,7 +4,9 @@ const Packs = ({packs}) => {
     const Packcollection = () => (packs.map((item, i) => <Pack props={item} key={i}/>))
     return(
         <>
-            <Packcollection/>
+            <div className="pack-page-content">
+                <Packcollection/>
+            </div>
         </>
     )
 }

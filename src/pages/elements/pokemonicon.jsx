@@ -1,7 +1,7 @@
 import React from "react";
-const Pokemon = ({ pokemon }) => {
+const Pokemon = ({ pokemon, style }) => {
     return (
-        <div className="pokemon-ico">
+        <div style={style && style} className="pokemon-ico">
             <img alt="" src={pokemon.image}/>
             Name: {pokemon.name}
             <br></br>

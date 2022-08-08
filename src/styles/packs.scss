@@ -1,12 +1,14 @@
 .pack-icon{
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 0px;
     text-align: left;
     height: 200px;
     width: 200px;
     border: 2px solid black;
+    border-radius: 5px;
+    background-color: $mainbackGround;
     h2{
         margin: 10px;
     }
@@ -18,4 +20,11 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+}
+.pack-page-content{
+    display: flex;
+    flex-direction: row;
+}
+.pack-open{
+    border: 2px solid;
 }
