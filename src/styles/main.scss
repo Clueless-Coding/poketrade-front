@@ -50,9 +50,10 @@ body{
     padding: 0;
     position: absolute;
     top: 70px;
+    height: 2000px;
     align-items: center;
-    background-color: $thirdbackGround;
-    //backdrop-filter: blur(5px);
+    //background-color: $thirdbackGround;
+    backdrop-filter: blur(5px);
     width: 80vw;
     opacity: 1;
 }

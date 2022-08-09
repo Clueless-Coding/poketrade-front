@@ -1,11 +1,14 @@
 import React from "react";
 import Pack from "./elements/packicon";
-const Packs = ({packs}) => {
-    const Packcollection = () => (packs.map((item, i) => <Pack props={item} key={i}/>))
+const Packs = ({packs, user}) => {
+    const Packlist= () => (packs.map((item, i) => <Pack props={item} key={i}/>))
     return(
         <>
+            <div>
+                <h4>Your balance: {user.balance}</h4>
+            </div>
             <div className="pack-page-content">
-                <Packcollection/>
+                <Packlist/>
             </div>
         </>
     )

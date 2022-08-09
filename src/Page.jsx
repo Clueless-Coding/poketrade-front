@@ -26,7 +26,7 @@ const Page = () => {
         ]
     },
     {       
-        name: "Default",
+        name: "Second",
         price:  0,
         items: [
             {
@@ -42,13 +42,6 @@ const Page = () => {
         ]
     }]
     //there are no packs yet
-    const packPages = holder.map((item, i) => 
-        <Route key={i}
-            path={`/${item.name}`}
-            element={<Packpage props={item}/>
-            }
-        />
-    )
 
     const [token, setToken] = useState()
     //const [pokemon, setPokemon] = useState()
@@ -64,6 +57,14 @@ const Page = () => {
     const handleconPas = (value) => {
         setUserAuth(prevState => ({...prevState, cPassword: value}))
     }
+    const packPages = holder.map((item, i) => 
+        <Route key={i}
+            path={`/${item.name}`}
+            element={<Packpage props={item}
+            user={user}/>
+            }
+        />
+    )
     //Login API call 
     const login = async (event) => {
         event.preventDefault()
@@ -137,6 +138,7 @@ const Page = () => {
                             path="/packs/*"
                             element={<Packs 
                                 packs={holder}
+                                user={user}
                             />}
                         />
                         <Route

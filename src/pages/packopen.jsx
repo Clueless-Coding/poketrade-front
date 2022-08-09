@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Pokemon from "./elements/pokemonicon"
-const Packpage = ({ props }) => {
+const Packpage = ({ props, user }) => {
     const Packcollection = () => (props.items.map((item, itemid) => <Pokemon key={itemid} pokemon={item}/>))
     const holder2 = {
                 id: 1,
@@ -16,6 +16,13 @@ const Packpage = ({ props }) => {
         "animationDuration": "0.5s",
         "position": "relative",
     } 
+    const Button = () => {
+        return (
+            <button onClick={hadleOpening} className="submit">
+                Open pack for {props.price}
+            </button>
+        )
+    }
     return (
         <>
             <h1>{props.name}</h1>
@@ -23,10 +30,9 @@ const Packpage = ({ props }) => {
                 <h2>This pack contains:</h2>
                 <Packcollection/>
             </div>
-            <button onClick={hadleOpening} className="submit">
-                Open pack
-            </button>
-            {pokemon &&<Pokemon style={openingAnimation} pokemon={pokemon}/>}
+            <h4>Your balance: {user.balance}</h4>
+            {user.name ? <Button/> : <h4>Please login to open packs</h4> } 
+            {pokemon && <Pokemon style={openingAnimation} pokemon={pokemon}/>}
         </>
     )
 }
