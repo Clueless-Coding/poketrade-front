@@ -48,6 +48,7 @@ const Page = () => {
     const [userAuth, setUserAuth] = useState({})
     const [user, setUser] = useState({})
     //Would be better if I could get rid of it
+
     const handleName = (value) => {
         setUserAuth(prevState => ({...prevState, username: value}))
     }
@@ -57,6 +58,7 @@ const Page = () => {
     const handleconPas = (value) => {
         setUserAuth(prevState => ({...prevState, cPassword: value}))
     }
+
     const packPages = holder.map((item, i) => 
         <Route key={i}
             path={`/${item.name}`}
@@ -65,6 +67,7 @@ const Page = () => {
             }
         />
     )
+
     //Login API call 
     const login = async (event) => {
         event.preventDefault()
@@ -86,7 +89,6 @@ const Page = () => {
         }
     }
     //Register API call
-    //need rework
     const register = async (event) => {
         event.preventDefault()
         const response = await fetch(`https://poketrade-production.up.railway.app/auth/register`, {

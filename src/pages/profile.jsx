@@ -6,7 +6,11 @@ const Profile = ({user}) => {
         localStorage.clear("token")
         window.location.reload()
     }
-    const Inventory = () => (user.pokemons && user.pokemons.map((item, itemid) => <Pokemon key={itemid} pokemon={item}/>))
+    const handleSell = async (props) => {
+        console.log(props)
+        //Will be API call for quick sell
+    }
+    const Inventory = () => (user.pokemons && user.pokemons.map((item, itemid) => <Pokemon key={itemid} pokemon={item} sell={handleSell}/>))
     return (
     <>
         <div className="profile">
