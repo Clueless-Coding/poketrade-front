@@ -7,6 +7,7 @@ const Pokemon = ({ pokemon, style, sell}) => {
             <br></br>
             Id: {pokemon.id}
             {sell && <button className="submit" onClick={() => sell(pokemon)}>Quick sell</button>}
+            <br/>
         </div>
     ) 
 }

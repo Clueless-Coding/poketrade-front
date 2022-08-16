@@ -9,6 +9,7 @@ import Packs from "./pages/packs";
 import Packpage from "./pages/packopen";
 import FooterExp from "./footer_expansion";
 const Page = () => {
+
     const holder = [{
         name: "Default",
         price:  0,
