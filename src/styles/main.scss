@@ -10,31 +10,19 @@ body{
     padding: 0px;
     margin: 0px;
     color: white;
-    &:after{
-        content: "";
-        position: absolute;
-        top: 0;
-        background-color: black;
-        opacity: 0.7;
-        z-index: -1;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        position: fixed;
-    }
     &:before{
         content: "";
-        position: absolute;
         top: 0;
         left: 0;
         z-index: -1;
-        background-image: url("./wallpaper-56.jpg");
-        filter: blur(5px);
+        //background-image: url("./wallpaper-56.jpg");
+        animation: backGroundGradient 40s ease infinite;
+        background: linear-gradient(to right bottom, #20000A,#470017, #AC3C5F,#470017, #20000A);
+        background-size: 400% 400%;
         height: 100vh;
         width: 100vw;
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;
         position: fixed;
     }
 }
@@ -52,7 +40,7 @@ body{
     top: 70px;
     //height: 2000px;
     align-items: center;
-    background-color: $thirdbackGround;
+    //background-color: $thirdbackGround;
     backdrop-filter: blur(5px);
     width: 80vw;
     opacity: 1;
