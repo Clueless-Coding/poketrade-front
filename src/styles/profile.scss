@@ -17,3 +17,13 @@
     display: flex;
     margin: 10px;
 }
+.input{
+    padding: 7px;
+    border-radius: 5px;
+    &:focus{
+        border: 1px solid black;
+    }
+}
+.form{
+    margin: 10px;
+}
