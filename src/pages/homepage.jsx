@@ -9,7 +9,7 @@ const Homepage = ({pokemon}) => {
                     <Link to="/Packs">
                         <div className="card-text">
                             <h1>Open packs</h1>
-                            <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga blanditiis quam earum amet ullam possimus?</p></div>
+                            <div><p>Open pokemons and collect them in your inventory</p></div>
                         </div>
                     </Link>
                 </div>
@@ -17,14 +17,14 @@ const Homepage = ({pokemon}) => {
                     <Link to="/Profile">
                         <div className="card-text ">
                             <h1>Sell your pokemons</h1>
-                            <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga blanditiis quam earum amet ullam possimus?</p></div>
+                            <div><p>You can quick sell your pokemons or sell them on trade market</p></div>
                         </div>
                     </Link>
                 </div>
                 <div className="card card-trade">
                     <div className="card-text">
                         <h1>Buy new pokemons</h1>
-                        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga blanditiis quam earum amet ullam possimus?</p></div>
+                        <div><p>Buy pokemons you want on trade market instead trying to get them from packs</p></div>
                     </div>
                 </div>
             </div>

@@ -2,43 +2,47 @@ import React from "react";
 const Login = ( { login, register, handleName, handlePas, handleconPas,} ) => {
     return (
         <>
-        <div>
-            Please login
+        <div className="form">
             <form onSubmit={login}>
-                <input 
-                    onChange={(item) => handleName(item.target.value)}
-                    placeholder="Your login"
-                >
-                </input>
-                <input
-                    onChange={(item) => handlePas(item.target.value)} 
-                    placeholder="Your pasword"
-                >
-                </input>
-                <button className="submit">
-                    Submit
-                </button>
+                <h2>Please login</h2>
+                <div >
+                    <input 
+                        onChange={({target}) => handleName(target.value)}
+                        placeholder="Your login"
+                        className="input"
+                    />
+                    <input
+                        onChange={({target}) => handlePas(target.value)} 
+                        placeholder="Your pasword"
+                        className="input"
+                    />
+                    <button className="submit">
+                        Submit
+                    </button>
+                </div>
             </form>
-            Or register
             <form onSubmit={register}>
-                <input 
-                    onChange={(item) => handleName(item.target.value)}
-                    placeholder="Your login"
-                >
-                </input>
-                <input
-                    onChange={(item) => handlePas(item.target.value)} 
-                    placeholder="Your password"
-                >
-                </input>
-                <input
-                    onChange={(item) => handleconPas(item.target.value)} 
-                    placeholder="Confirm your password"
-                >
-                </input>
-                <button className="submit">
-                    Submit
-                </button>
+                <h2>Or register</h2>
+                <div>
+                    <input 
+                        onChange={({target}) => handleName(target.value)}
+                        placeholder="Your login"
+                        className="input"
+                    />
+                    <input
+                        onChange={({target}) => handlePas(target.value)} 
+                        placeholder="Your password"
+                        className="input"
+                    />
+                    <input
+                        onChange={({target}) => handleconPas(target.value)} 
+                        placeholder="Confirm your password"
+                        className="input"
+                    />
+                    <button className="submit">
+                        Submit
+                    </button>
+                </div>
             </form>
         </div>
         </>

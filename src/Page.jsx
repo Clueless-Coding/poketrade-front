@@ -61,7 +61,8 @@ const Page = () => {
     }
 
     const packPages = holder.map((item, i) => 
-        <Route key={i}
+        <Route
+            key={i}
             path={`/${item.name}`}
             element={<Packpage props={item}
             user={user}/>
@@ -140,8 +141,8 @@ const Page = () => {
                         <Route
                             path="/packs/*"
                             element={<Packs 
-                                packs={holder}
-                                user={user}
+                                        packs={holder}
+                                        user={user}
                             />}
                         />
                         <Route
