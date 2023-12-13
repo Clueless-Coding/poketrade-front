@@ -5,9 +5,11 @@ const Nav = (props) => {
     <div className="nav--con">
         <ul>
             <li>
-                <div id="nav-pic" className="nav-tab">
-                    <img alt="" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"/>
-                </div>
+                <Link to="/">
+                    <div id="nav-pic" className="nav-tab">
+                        <img alt="" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"/>
+                    </div>
+                </Link>
             </li>
             <li>
                 <Link to="/">

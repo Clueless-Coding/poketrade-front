@@ -2,21 +2,21 @@ import { useEffect, useState } from "react"
 import Pokemon from "./elements/pokemonicon"
 const Packpage = ({ props, user }) => {
     const Packcollection = () => (props.items.map((item, itemid) => <Pokemon key={itemid} pokemon={item}/>))
-    const holder2 = {
-                id: 1,
-                name: "bulbasaur",
-                image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    }
-    const openingAnimation ={
-        "animationName": "openingAnimation",
-        "animationDuration": "0.5s",
-        "position": "relative",
-    } 
-
     const [pokemon, setPokemon] = useState()
     const [drop, setDrop] = useState([])
-    const hadleOpening = () => {
-        setPokemon(holder2)
+    const hadleOpening = async () => {
+        const smth = Math.floor(Math.random() * 151)
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${smth}`, {
+            method: `GET`,
+        })
+        const data = (await response.json())
+        const holder = {
+            id: data.id,
+            name: data.name,
+            image: data.sprites.other[`official-artwork`].front_default
+        }
+        console.log(data)
+        setPokemon(holder)
     } 
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const Packpage = ({ props, user }) => {
         const displayDrop = drop.map((item, i) => <Pokemon pokemon={item} key={i}/>)
         return (
             <div className="drop">
-                {displayDrop.slice(-7)}
+                {displayDrop.slice(-10)}
             </div>
         )
     }
@@ -49,7 +49,8 @@ const Packpage = ({ props, user }) => {
             <h4>Your balance: {user.balance}</h4>
             {user.name ? <Button/> : <h4>Please login to open packs</h4>}
             <Button/>
-            {pokemon && <Pokemon style={openingAnimation} pokemon={pokemon}/>}
+            {pokemon && <Pokemon pokemon={pokemon}/>}
+            <h2>You've gotten so far:</h2>
             {drop && <Drop/>}
         </>
     )
