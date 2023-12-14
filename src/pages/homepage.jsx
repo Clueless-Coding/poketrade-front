@@ -21,14 +21,19 @@ const Homepage = ({pokemon}) => {
                         </div>
                     </Link>
                 </div>
+                {
+                /*
                 <div className="card card-trade">
                     <div className="card-text">
                         <h1>Buy new pokemons</h1>
                         <div><p>Buy pokemons you want on trade market instead trying to get them from packs</p></div>
                     </div>
                 </div>
+                */
+                }
             </div>
         </>
     )
 }
 export default Homepage
+                

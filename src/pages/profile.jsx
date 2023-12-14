@@ -1,6 +1,7 @@
 import React from "react";
 import Pokemon from "./elements/pokemonicon";
 import holder from "./ANOTHERONE.png"
+import { API } from "../const";
 const Profile = ({user}) => {
     const logOut = () => {
         localStorage.clear("token")
@@ -11,6 +12,7 @@ const Profile = ({user}) => {
         //Will be API call for quick sell
     }
     const Inventory = () => (user.pokemons && user.pokemons.map((item, itemid) => <Pokemon key={itemid} pokemon={item} sell={handleSell}/>))
+    console.log(user)
     return (
     <>
         <div className="profile">
@@ -22,7 +24,7 @@ const Profile = ({user}) => {
             </div>
             <button className="submit" onClick={logOut}>Log out</button>
             <div className="inventory">
-                <h1>{user.pokemons ? "Your collection" : "You dont have yet any pokemons"}</h1>
+                <h1>{user.pokemons.length ? "Your collection" : "You dont have yet any pokemons"}</h1>
                 <Inventory/>
             </div>
         </div>

@@ -1,22 +1,20 @@
 import { useEffect, useState } from "react"
 import Pokemon from "./elements/pokemonicon"
-const Packpage = ({ props, user }) => {
+import { API } from "../const"
+const Packpage = ({ props, user, api }) => {
+    const token = localStorage.getItem('token')
     const Packcollection = () => (props.items.map((item, itemid) => <Pokemon key={itemid} pokemon={item}/>))
     const [pokemon, setPokemon] = useState()
     const [drop, setDrop] = useState([])
     const hadleOpening = async () => {
-        const smth = Math.floor(Math.random() * 151)
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${smth}`, {
-            method: `GET`,
+        const response = await fetch(`${API}/packs/open`, {
+            method: `POST`,
+            headers: {
+                'x-access-token': token
+            },
         })
         const data = (await response.json())
-        const holder = {
-            id: data.id,
-            name: data.name,
-            image: data.sprites.other[`official-artwork`].front_default
-        }
-        console.log(data)
-        setPokemon(holder)
+        setPokemon(data.pokemon)
     } 
 
     useEffect(() => {
@@ -30,7 +28,6 @@ const Packpage = ({ props, user }) => {
             </button>
         )
     }
-    
     const Drop = () => {
         const displayDrop = drop.map((item, i) => <Pokemon pokemon={item} key={i}/>)
         return (
@@ -48,7 +45,6 @@ const Packpage = ({ props, user }) => {
             </div>
             <h4>Your balance: {user.balance}</h4>
             {user.name ? <Button/> : <h4>Please login to open packs</h4>}
-            <Button/>
             {pokemon && <Pokemon pokemon={pokemon}/>}
             <h2>You've gotten so far:</h2>
             {drop && <Drop/>}

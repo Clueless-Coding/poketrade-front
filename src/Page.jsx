@@ -8,6 +8,7 @@ import Footer from "./footer";
 import Packs from "./pages/packs";
 import Packpage from "./pages/packopen";
 import FooterExp from "./footer_expansion";
+import {API} from "./const"
 const Page = () => {
     const holder = [{
         name: "Default",
@@ -72,35 +73,35 @@ const Page = () => {
     //Login API call 
     const login = async (event) => {
         event.preventDefault()
-        const response = await fetch(`https://poketrade-production.up.railway.app/auth/login`, {
+        const response = await fetch(`${API}/auth/login`, {
             method: `POST`,
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                login:  userAuth.username,
+                username:  userAuth.username,
                 password: userAuth.password,
             })
         })
         const data = await response.json()
-        if(data.success){ 
-            setToken(data.data)
-            localStorage.setItem("token", data.data)
+        if(response.status === 201){ 
+            setToken(data.accessToken)
+            localStorage.setItem("token", data.accessToken)
             window.location.reload();
         }
     }
     //Register API call
     const register = async (event) => {
         event.preventDefault()
-        const response = await fetch(`https://poketrade-production.up.railway.app/auth/register`, {
+        const response = await fetch(`${API}/auth/register`, {
             method: `POST`,
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                login: userAuth.username,
+                username: userAuth.username,
                 password: userAuth.password,
-                confirm_password: userAuth.cPassword
+                confirmPassword: userAuth.cPassword
             })
         })
         const token = (await response.json()).data
@@ -117,14 +118,14 @@ const Page = () => {
     
     //Getting user's info
     const getUser = async(props) => {
-        const response = await fetch(`https://poketrade-production.up.railway.app/users/@me`, {
+        const response = await fetch(`${API}/users/me`, {
             method: `GET`,
             headers: {
                 'x-access-token': props
             }
         })
         const data = (await response.json())
-        data.success ? setUser({...data.data}) : localStorage.removeItem("token")
+        response.status === 200 ? setUser({...data}) : localStorage.removeItem("token")
     }
     return (
         <>
@@ -142,6 +143,7 @@ const Page = () => {
                             element={<Packs 
                                         packs={holder}
                                         user={user}
+                                        api={API}
                             />}
                         />
                         <Route
@@ -169,7 +171,7 @@ const Page = () => {
 }
 export default Page
 /*
-  uuuuuuuuuuuuuuuuuuuuu.
+                      uuuuuuuuuuuuuuuuuuuuu.
                    .u$$$$$$$$$$$$$$$$$$$$$$$$$$W.
                  u$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$Wu.
                $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$i
