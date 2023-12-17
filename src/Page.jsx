@@ -69,7 +69,14 @@ const Page = () => {
             }
         />
     )
-
+    /*
+    const getPacks = async () => {
+        const response = await fetch(`${API}` ,{
+            method: `GET`,
+        })
+    holder = await response.json()
+    }
+    */
     //Login API call 
     const login = async (event) => {
         event.preventDefault()
@@ -114,6 +121,7 @@ const Page = () => {
     useEffect(() => {
         savedToken && getUser(savedToken)
         savedToken && setToken(savedToken)
+        //getPacks()
     }, [])
     
     //Getting user's info

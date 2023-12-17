@@ -12,7 +12,6 @@ const Profile = ({user}) => {
         //Will be API call for quick sell
     }
     const Inventory = () => (user.pokemons && user.pokemons.map((item, itemid) => <Pokemon key={itemid} pokemon={item} sell={handleSell}/>))
-    console.log(user)
     return (
     <>
         <div className="profile">
@@ -24,7 +23,7 @@ const Profile = ({user}) => {
             </div>
             <button className="submit" onClick={logOut}>Log out</button>
             <div className="inventory">
-                <h1>{user.pokemons.length ? "Your collection" : "You dont have yet any pokemons"}</h1>
+                <h1>{user?.pokemons?.length ? "Your collection" : "You dont have yet any pokemons"}</h1>
                 <Inventory/>
             </div>
         </div>

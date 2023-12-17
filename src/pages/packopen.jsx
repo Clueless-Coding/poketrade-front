@@ -6,6 +6,15 @@ const Packpage = ({ props, user, api }) => {
     const Packcollection = () => (props.items.map((item, itemid) => <Pokemon key={itemid} pokemon={item}/>))
     const [pokemon, setPokemon] = useState()
     const [drop, setDrop] = useState([])
+    /*
+    const getItems = async () => {
+        const response = await fetch(`${API}/packs/items`, {
+            method: `GET`,
+        })
+        const data = (await response.json())
+        const Packcollection = () => (data.items.map((item, itemid) => <Pokemon key={itemid} pokemon={item}/>))
+    }
+    */
     const hadleOpening = async () => {
         const response = await fetch(`${API}/packs/open`, {
             method: `POST`,
@@ -16,7 +25,7 @@ const Packpage = ({ props, user, api }) => {
         const data = (await response.json())
         setPokemon(data.pokemon)
     } 
-
+    
     useEffect(() => {
         pokemon && setDrop(prevState => ([ ...prevState, pokemon]))
     }, [pokemon])
