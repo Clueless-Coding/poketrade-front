@@ -1,6 +1,7 @@
 .profile-user {
     margin: 10px;
-    border: solid 1px white;
+    border: solid 1px 505050;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     width: 200px;
@@ -14,8 +15,14 @@
     }
 }
 .inventory {
-    display: flex;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 200px 200px 200px 200px 200px 200px 200px;
     margin: 10px;
+    border-radius: 5px;
+    border: solid 1px 505050;
+    border: 2px soild;
+    background-color: $mainbackGround;
 }
 .input{
     padding: 7px;

@@ -1,1 +1,2 @@
-export const API = "https://4efc-5-227-29-141.ngrok-free.app/api"
+export const API = "http://localhost:3001/api"
+export const avatar = "https://i2.wp.com/vdostavka.ru/wp-content/uploads/2019/05/no-avatar.png?fit=512%2C512&ssl=1"

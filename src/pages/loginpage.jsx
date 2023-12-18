@@ -12,6 +12,7 @@ const Login = ( { login, register, handleName, handlePas, handleconPas,} ) => {
                         className="input"
                     />
                     <input
+                        type="password"
                         onChange={({target}) => handlePas(target.value)} 
                         placeholder="Your pasword"
                         className="input"
@@ -30,11 +31,13 @@ const Login = ( { login, register, handleName, handlePas, handleconPas,} ) => {
                         className="input"
                     />
                     <input
+                        type="password"
                         onChange={({target}) => handlePas(target.value)} 
                         placeholder="Your password"
                         className="input"
                     />
                     <input
+                        type="password"
                         onChange={({target}) => handleconPas(target.value)} 
                         placeholder="Confirm your password"
                         className="input"
