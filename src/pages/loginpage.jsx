@@ -16,6 +16,7 @@ const Login = ( { login, register, handleName, handlePas, handleconPas,} ) => {
                         onChange={({target}) => handlePas(target.value)} 
                         placeholder="Your pasword"
                         className="input"
+                        autoComplete=""
                     />
                     <button className="submit">
                         Submit
@@ -35,12 +36,14 @@ const Login = ( { login, register, handleName, handlePas, handleconPas,} ) => {
                         onChange={({target}) => handlePas(target.value)} 
                         placeholder="Your password"
                         className="input"
+                        autoComplete=""
                     />
                     <input
                         type="password"
                         onChange={({target}) => handleconPas(target.value)} 
                         placeholder="Confirm your password"
                         className="input"
+                        autoComplete=""
                     />
                     <button className="submit">
                         Submit
